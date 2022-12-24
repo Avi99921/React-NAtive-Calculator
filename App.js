@@ -1,6 +1,6 @@
 
 import React, { useEffect, useState } from 'react';
-import {StyleSheet, View ,StatusBar} from 'react-native';
+import {StyleSheet, View ,StatusBar,SafeAreaView} from 'react-native';
 import Display from './Components/TextInput/Display';
 import Buttons from './Components/Buttons/Buttons';
 import ExponentButtons from './Components/Buttons/ExponentButtons';
@@ -367,7 +367,7 @@ export default function App() {
   }
   
   return (
-    <View style={styles.container}>
+    <SafeAreaView style={styles.container}>
       <StatusBar style="light" />
       <View style={{backgroundColor:"white"}}>
         <Display data={value} onPress={vals}/>
@@ -377,12 +377,10 @@ export default function App() {
         <Buttons first={{name:'7',id:"7"}} second={{name:'8',id:"8"}} third={{name:'9',id:"9"}} fourth={{name:'÷',id:'/'}} onPress={vals}/>
         <Buttons first={{name:'4',id:"4"}} second={{name:'5',id:"5"}} third={{name:'6',id:"6"}} fourth={{name:'×',id:'*'}} onPress={vals}/>
         <Buttons first={{name:'1',id:"1"}} second={{name:'2',id:"2"}} third={{name:'3',id:"3"}} fourth={{name:'+',id:'+'}} onPress={vals}/>
-        <Buttons first={{name:'X!',id:'fatorial'}} second={{name:'0',id:"0"}} third={{name:'.',id:'.'}} fourth={{name:'-',id:'-'}} onPress={vals}/>
-        
-        
+        <Buttons first={{name:'X!',id:'fatorial'}} second={{name:'0',id:"0"}} third={{name:'.',id:'.'}} fourth={{name:'-',id:'-'}} onPress={vals}/>   
         <Buttons first={{name:'1/X',id:'1/X'}} second={{name:'AC',id:"clear"}} third={{name:'%',id:'percent'}} fourth={{name:'=',id:'eql'}} onPress={vals}/>
       </View>
-    </View>
+    </SafeAreaView>
   );
 }
 const styles = StyleSheet.create({
